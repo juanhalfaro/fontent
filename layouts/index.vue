@@ -1,10 +1,17 @@
 <template>
-    <v-row justify="center" aling="center" class="renglon">
+    <div style="padding": 20px>
+        <principal />
+    </div>
         <nuxt />
     </v-row>
 </template>
 
 <style>
+
+
+<script>
+import principal from '~/components/dashboard/app.nuxt'
+
 
 .renglon
 {

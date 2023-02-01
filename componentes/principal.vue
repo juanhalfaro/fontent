@@ -9,15 +9,19 @@
             </v-data-table>
         </v-row>
     </v-col>
+    <template #[´item.Actions´] = "{item}"> 
+
     <v-row class="renglon">
         <v-btn>
             Agregar Nuevo Usuarios
         </v-btn>
+        <v-btn icon color="orange"></v-btn>
+        <v-icon>m-di-human-edit</v-icon>
     </v-row>
     <v-dialog v-model="openDialog" width="800" height="500" persistent>
         <v-card>Agregar datos del usuarios</v-card>
         <v-card-text>
-            //Nuxt👻👻👻
+            //Nuxt👻👻👻🥰
         </v-card-text>
 
         <v-form ref="formRegistro">
@@ -36,7 +40,7 @@
             <v-text-field type="text" aria-placeholder="Password:" label="name"></v-text-field>
         </v-form>
 
-        <v-card-actions style="width:100%; display:flex; flex-directions: column; ">
+        <v-card-actions style="width:100%; display:flex; flex-directions: column; ">,
             <v-row style="width: 100%; margin-top:5px; margin-bottom: 10px;"></v-row>
             <v-btn black color="green" @click="openDialog = false">
                 Cancelar
@@ -47,7 +51,7 @@
 
 
     </v-dialog>
-
+</template>
 </template>
 
 <script>
@@ -118,9 +122,18 @@ export default {
             .catch((error) =>{
                 console.log('error', error)
             })
+            const usuario = {
+                id: item._id
+            }
+            await this.$axios.post('/user/register', usuarioNuevo)
+            .then((res) ={
+                console.log('res', res)
+            })
+            if(res.data.message === 'usuario borrado')
         }
+    
     }
-}
+}  //(;-;),  (^-^*) (;-;) (T-T) 0000
 </script>
 
 <style scoped>
